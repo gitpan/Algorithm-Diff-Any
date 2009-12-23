@@ -3,7 +3,7 @@
 # t/99min-perl.t
 #  Tests that the minimum required Perl version matches META.yml
 #
-# $Id: 99min-perl.t 10345 2009-12-03 01:51:12Z FREQUENCY@cpan.org $
+# $Id: 99min-perl.t 10594 2009-12-23 00:25:00Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;

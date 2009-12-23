@@ -3,7 +3,7 @@
 # Build.PL
 #  Script to build and install this distribution
 #
-# $Id: Build.PL 10346 2009-12-03 01:53:25Z FREQUENCY@cpan.org $
+# $Id: Build.PL 10594 2009-12-23 00:25:00Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;
@@ -12,7 +12,7 @@ use Module::Build;
 
 my $builder = Module::Build->new(
   module_name           => 'Algorithm::Diff::Any',
-  license               => 'unrestricted',
+  license               => 'perl',
   dist_author           => 'Jonathan Yu <jawnsy@cpan.org>',
   dist_version_from     => 'lib/Algorithm/Diff/Any.pm',
   dynamic_config        => 0,
@@ -21,12 +21,10 @@ my $builder = Module::Build->new(
   sign                  => 1,
   create_packlist       => 1,
 
-  # Maintain compatibility with ExtUtils::MakeMaker installations
-  create_makefile_pl    => 'passthrough',
-
   requires => {
     'perl'              => 5.006,
-    'Algorithm::Diff'   => 0,
+    'Exporter'          => 5.57, # for: use Exporter 'import'
+    'Algorithm::Diff'   => 1.1902, # for OO interface
 
     # The tests are based on Test::More
     'Test::More'        => 0.62,
